@@ -11,7 +11,7 @@ class App extends Component {
       <div className="App">
         <nav id="NavBar">
           <div className="nav-wrapper white">
-            <a href="#!" className="brand-logo black-text center">
+            <a href="/" className="brand-logo black-text center">
               <i className="material-icons">book</i> BookSearch</a>
             <a href="#" data-target="mobile-demo" className="sidenav-trigger black-text">
               <i className="material-icons">menu</i>

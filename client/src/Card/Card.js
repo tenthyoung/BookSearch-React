@@ -18,6 +18,7 @@ class Card extends Component {
         }
 
         this.handleSaveBook = this.handleSaveBook.bind(this);
+        this.handleDeleteBook = this.handleDeleteBook.bind(this);
     }
     
 
@@ -32,13 +33,20 @@ class Card extends Component {
         let json = await response.json();
         console.log(json);
 
-        this.props.saveBook();
-        
+    }
 
+    async handleDeleteBook () {
+      console.log('hihi');
+      let response = await fetch(`/api/books/${this.props.id}`, {
+        method: 'DELETE',
+      });
+      let serverResponse = await response.json();
+      console.log(`Server's response to delete request`);
+      console.table(serverResponse);
     }
 
     render() {
-        console.log("childporps",this.props);
+      console.log('child props', this.props.id)
         return (
             // <div className="Card card large col s6">
             //     <div className="card-image waves-effect waves-block waves-light">
@@ -54,7 +62,7 @@ class Card extends Component {
             //         <p>{this.props.description}</p>
             //     </div>
             // </div>
-            <div className="col s12">
+            <div className="col s12 l6 m8 offset-m2">
             <h2 className="header">{this.props.title} <span className="author-span">by {this.props.authors}</span></h2>
             <div className="card horizontal">
               <div className="card-image">
@@ -65,11 +73,15 @@ class Card extends Component {
                   <p>
                     {this.props.description.substring(0,200)+ "..."}
                     <br/>
-                    <a href="#">Read More...</a>
+                    <a href={this.props.link}>Read More...</a>
                   </p>
                 </div>
                 <div className="card-action">
+                  {this.props.delete === true ? 
+                  <a className="waves-effect waves-light btn right" onClick={this.handleDeleteBook}>Delete</a>
+                  :
                   <a className="waves-effect waves-light btn right" onClick={this.handleSaveBook}>save</a>
+                  }
                   <a className="waves-effect waves-light btn right" href={this.props.link}>Buy</a>
                 </div>
               </div>

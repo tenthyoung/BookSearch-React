@@ -13,7 +13,6 @@ class Search extends Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.saveBook = this.saveBook.bind(this);
     }
 
 
@@ -61,10 +60,6 @@ class Search extends Component {
         console.log(this.state.booksArray)
     }
 
-    saveBook () {
-        alert('hi')
-    }
-
     render() {
         return (
             <div className="Search container">
@@ -95,7 +90,7 @@ class Search extends Component {
                                 description={item.description}
                                 link={item.link}
                                 image={item.image}
-                                saveBook={this.saveBook} />)
+                                />)
                         })}
                     </div>
                 </div>
