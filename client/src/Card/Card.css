@@ -1,0 +1,23 @@
+.card-title {
+    font-size: 1rem !important;
+}
+
+.author-span {
+    color: lightgray;
+}
+
+.header {
+    font-size: 1.4rem;
+}
+
+
+
+/* .card-image .btn-floating {
+    display: float !important; 
+    z-index: 10 !important;
+}
+
+.Card .card-content {
+    display: float;
+    z-index: 4; 
+} */
