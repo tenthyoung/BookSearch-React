@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
+const routes = require("./routes")
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -14,7 +15,7 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(routes);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/booksearchDB");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/booksearchDB", {useNewUrlParser: true});
 
 
 // Define API routes here

@@ -21,7 +21,17 @@ class Card extends Component {
     }
     
 
-    handleSaveBook () {
+    async handleSaveBook () {
+        let response = await fetch('/api/books', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(this.props),
+        });
+        let json = await response.json();
+        console.log(json);
+
         this.props.saveBook();
         
 
