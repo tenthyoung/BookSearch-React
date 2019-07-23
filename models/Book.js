@@ -12,4 +12,4 @@ const BookSchema = new Schema({
   // We need to create a new collection called Books based off the BookSchema
   const Book = mongoose.model('Book', BookSchema);
 
-  module.exports = Book;
+  module.exports = book;
