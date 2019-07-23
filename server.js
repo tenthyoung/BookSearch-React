@@ -14,8 +14,11 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.use(routes);
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/booksearchDB";
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/booksearchDB", {useNewUrlParser: true});
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/booksearchDB", {useNewUrlParser: true});
 
 
 // Define API routes here
