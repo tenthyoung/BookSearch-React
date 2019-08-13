@@ -43,7 +43,7 @@ class Search extends Component {
         for (let idx = 0; idx < bookObj.items.length; idx++) {
             let { title, authors, description, imageLinks, infoLink } = bookObj.items[idx].volumeInfo;
             let thumbnail;
-            {imageLinks === undefined ? thumbnail = "" : thumbnail = imageLinks.thumbnail}
+            imageLinks === undefined ? thumbnail = "" : thumbnail = imageLinks.thumbnail;
             let tempObj = {
                 title: title,
                 authors: authors,

@@ -66,7 +66,7 @@ class Card extends Component {
             <h2 className="header">{this.props.title} <span className="author-span">by {this.props.authors}</span></h2>
             <div className="card horizontal">
               <div className="card-image">
-                <img src={this.props.image} />
+                <img src={this.props.image} alt={this.props.title}/>
               </div>
               <div className="card-stacked">
                 <div className="card-content">
@@ -78,9 +78,9 @@ class Card extends Component {
                 </div>
                 <div className="card-action">
                   {this.props.delete === true ? 
-                  <a className="waves-effect waves-light btn right" onClick={this.handleDeleteBook}>Delete</a>
+                  <button className="waves-effect waves-light btn right" onClick={this.handleDeleteBook}>Delete</button>
                   :
-                  <a className="waves-effect waves-light btn right" onClick={this.handleSaveBook}>save</a>
+                  <button className="waves-effect waves-light btn right" onClick={this.handleSaveBook}>save</button>
                   }
                   <a className="waves-effect waves-light btn right" href={this.props.link}>Buy</a>
                 </div>
